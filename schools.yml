@@ -1,0 +1,28 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka
+
+server:
+  port: 8183
+spring:
+  application:
+    name: schools
+  datasource:
+    url: jdbc:postgresql://localhost:5434/school
+    username: postgres
+    password: school
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+application:
+  config:
+    student-url: http://localhost:8199/api/v1/students
